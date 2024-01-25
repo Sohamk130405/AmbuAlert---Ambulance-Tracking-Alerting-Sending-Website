@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmbuAlert-Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="log.css">
+</head>
+<body>
+    <div class="container">
+        <div class="title">Login</div>
+        <form action="/login/check" method="post">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details"> Username</span>
+                    <input type="text" name="username" placeholder="Enter Your Username" required>
+                </div>
+        
+                <div class="input-box">
+                    <span class="details"> Password</span>
+                    <input type="password" name="password" placeholder="Enter Your Password" required>
+                </div>
+            </div>
+            <span>Not have an account? <a href="/register">Register</a></span>
+            <div class="button">
+                <input type="submit" value="Login">
+            </div>
+    
+        </form>
+    </div> 
+    <script>
+        // Check for the script in the response and execute it
+        const scriptPlaceholder = document.getElementById("script-placeholder");
+        const script = "<%= typeof script !== 'undefined' ? script : '' %>";
+      
+        if (script) {
+          scriptPlaceholder.innerHTML = script;
+        }
+      </script>
+</body>
+</html>

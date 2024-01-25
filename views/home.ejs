@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmbuAlert-Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/new-style.css">
+
+</head>
+<body>
+    <main>
+        <nav>
+            <div class="nav-name">
+                <p>Welcome</p>
+                <h3><%= user.name %></h3>
+            </div>
+            <div class="nav-logo">
+                <i class="fa-solid fa-truck-medical"></i>
+                <h3>AmbuAlert</h3>
+            </div>
+            <div class="nav-profile">
+                <img src="https://png.pngitem.com/pimgs/s/35-350426_profile-icon-png-default-profile-picture-png-transparent.png" alt="Driver Pic">
+            </div>
+        </nav>
+
+        <content>
+            <div class="heading">
+                <h1>Are You In Emergency?</h1>
+                <p>Send Alert To Route And Get Rid Of Traffic </p>
+            </div>
+            <form action="/route/<%= userId %>" method="post">
+                <div class="hospital-selection">
+                    <label for="hospital-dropdown" >Select Hospital:</label>
+                    <select id="hospital-dropdown" name="hospital">
+                        <!-- Hospitals will be dynamically added here in JavaScript -->
+                        <% for( let hospital of user.hospitals){ %>
+                            <option value="<%= hospital %>"><%= hospital %></option>
+                        <% } %>
+                    </select>
+                </div>
+                <div class="btn">
+                    <button type="submit"> 
+                        <span>Go To Route Selection</span> 
+                        <i class="fa-solid fa-angles-right"></i>
+                    </button>
+                </div>
+            </form>
+
+        </content>
+    </main>
+    
+</body>
+</html>

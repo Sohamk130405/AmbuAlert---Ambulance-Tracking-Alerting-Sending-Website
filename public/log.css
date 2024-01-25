@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #71b7e6,#9b59b6);
+}
+.container{
+    max-width: 700px;
+    max-height: 670px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    
+}
+
+.container .title{
+    font-size: 25px;
+    font-weight:500 ;
+    position: relative;
+}
+.container .title::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 30px;
+    background:linear-gradient(135deg, #71b7e6,#9b59b6);
+
+}
+
+.container form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box{
+    width: calc(100% / 2 - 20px);
+    margin-bottom: 15px;   
+}
+
+.user-details .input-box details{
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.user-details .input-box input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all ease 0.3s;
+}
+
+.user-details .input-box input:focus{
+    border-color: #9b59b6;
+}
+
+form .hospital-selection .hospital-title{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+form .hospital-selection .hos-info{
+    font-size: 10px;
+}
+
+form .hospital-selection .hospital-names{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 14px 0;
+}
+
+
+.hospital-selection .hospital-names label{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 5px 0;
+    
+}
+.hospital-selection .hospital-names .check{
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: #d9d9d9;
+    margin-right: 10px;
+    border: 5px solid transparent;
+    transition: all ease 0.3s;
+}
+
+#check-1:checked~ .hospital-names label .one,
+#check-2:checked~ .hospital-names label .two,
+#check-3:checked~ .hospital-names label .three,
+#check-4:checked~ .hospital-names label .four,
+#check-5:checked~ .hospital-names label .five
+{
+    border-color: #d9d9d9;
+    background: #9b59b6;
+}
+
+form input[type='checkbox']{
+    display: none;
+}
+
+form .button{
+    height: 45px;
+    margin: 45px 0;
+}
+form .button input {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(135deg, #71b7e6,#9b59b6);
+    outline: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: all ease 0.3s;
+}
+form .button input:hover{
+    border-color: #9b59b6;
+    background: linear-gradient(-135deg, #71b7e6,#9b59b6);
+}
+
+@media (max-width: 584px) {
+
+    .container{
+        max-width: 100%;
+        max-height: 100%;
+    }
+    form .user-details .input-box{
+        margin-bottom: 15px;
+        width:100%;
+    }
+    form .hospital-selection .hospital-names{
+        width: 100%;
+      
+    }
+    .container form .user-details {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+    .user-details::-webkit-scrollbar{
+        display: none;
+        width: 0;
+    }
+}

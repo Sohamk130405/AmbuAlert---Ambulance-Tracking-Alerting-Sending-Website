@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmbuAlert-Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/new-style.css">
+</head>
+<body>
+    <main>
+        <nav class="alert-nav">
+            <h1>Your Alert Was Sent Successfully</h1>
+            <i class="fa-solid fa-check"></i>
+        </nav>
+        <content>
+            <h5>
+                Check Out More options for Complete Map <br>
+            Check Out Your Messages for Updates from Route <br>
+            You Can Change Route If there is Traffic on this route
+            </h5>
+            <form action="/<%= userId %>/route/change?_method=PATCH" method="post">
+                <input type="hidden" name="hospital" value="<%= hosMap %>">
+                <div class="btn">
+                    <button type="submit"> 
+                        <span>Go To Route Selection</span> 
+                        <i class="fa-solid fa-angles-right"></i>
+                    </button>
+                </div>
+            </form>
+
+            <div id="dummy-map-alert" class="dummy-map">
+                <!-- <p>Dummy Map</p> -->
+                <iframe src="<%= newRoute %>" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="Fastest" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </div>
+            <div class="btn">
+                <button type="button" onclick="location.href='/exit/<%= userId %>',alert('Thanks For Using our platform\nWe hope,reduced traffic delay')"> 
+                    <span>Exit</span> 
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </button>
+            </div>
+        </content>
+    </main>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmbuAlert-Home</title>
+    <link rel="icon" type="image/png" href="emergency-services.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/new-style.css">
+</head>
+<body>
+    <main>
+        <nav class="route-nav">
+            <h1>Make Your Route Selection</h1>
+        </nav> 
+
+        <content>
+            <div id="route-selection">
+                <h1>Select Route</h1>
+               <form action="/<%= userId %>/<%= hosMap[0].name %>/route?_method=PATCH" method="post" >
+                <label for="route-dropdown">Select Route:</label>
+                <select id="route-dropdown" name="route">
+                    <% if (hosMap && hosMap[0] && hosMap[0].route) { %>
+                        <% for (let i = 0; i < hosMap[0].route.length; i++) { %>
+                            <option value="<%= i %>">Route <%= i + 1 %></option>
+                        <% } %>
+                    <% } %>
+                </select>
+                <button type="submit"> Change Route </button>
+               </form>
+                <form action="/alert/<%= userId %>" method="get">
+                    <input type="hidden" name="hosMap" value="<%= hosMap[0].name %>">
+                    <input type="hidden" name="newRoute" value="<%= newRoute %>">
+                    <div id="dummy-map-route" class="dummy-map">
+                        <% if (hosMap) { %>
+                            <iframe id="route-iframe" src="<%= newRoute %>" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="Fastest" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <% } else { %>
+                            <p>No route available for the selected hospital</p>
+                        <% } %>
+                    </div>
+                    <button id="alert-button" type="submit">Send Alert</button>
+                </div>
+                </form>
+        </content>   
+        
+        
+        
+    </main>
+</body>
+</html>
+

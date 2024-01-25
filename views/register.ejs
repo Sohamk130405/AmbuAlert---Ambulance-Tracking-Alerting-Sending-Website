@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/log.css" />
+    <title>AmbuAlert- Register</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="title">Registration</div> 
+      <form action="/register" method="post">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details"> Full Name</span>
+            <input type="text" placeholder="Enter Your Name" name="name" required />
+          </div>
+  
+          <div class="input-box">
+            <span class="details"> Username</span>
+            <input type="text" placeholder="Enter Your Username" name="username" required />
+          </div>
+  
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" placeholder="Enter Your Email" name="email" required />
+          </div>
+  
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="tel" placeholder="Enter Your Number" name="phone" pattern="[0-9]{10}" required />
+          </div>
+  
+          <div class="input-box">
+            <span class="details"> Password</span>
+            <input type="password" placeholder="Enter Your Password" name="password" required />
+          </div>
+  
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="password" placeholder="Renter Your Password" name="confirmPassword" required />
+          </div>
+        </div>
+
+        <div class="hospital-selection">
+          <input
+            type="checkbox"
+            name="hospitals"
+            id="check-1"
+            value="Sinnarka Hospital"
+          />
+          <input
+            type="checkbox"
+            name="hospitals"
+            id="check-2"
+            value="Sai Seva Hospital"
+          />
+          <input
+            type="checkbox"
+            name="hospitals"
+            id="check-3"
+            value="Bharati Hospital"
+          />
+          <input
+            type="checkbox"
+            name="hospitals"
+            id="check-4"
+            value="Sai Sneh Hospital"
+          />
+          <input
+            type="checkbox"
+            name="hospitals"
+            id="check-5"
+            value="Prerna Hospital"
+          />
+
+          <span class="hospital-title">Hospitals</span><br />
+          <span class="hos-info">Select Your hospital</span>
+          <div class="hospital-names">
+            <label for="check-1">
+              <span class="check one"></span>
+              <span class="hospital">Sinnarka Hospital</span>
+            </label>
+            <label for="check-2">
+              <span class="check two"></span>
+              <span class="hospital">Sai Seva Hospital</span>
+            </label>
+            <label for="check-3">
+              <span class="check three"></span>
+              <span class="hospital">Bharati Hospital</span>
+            </label>
+            <label for="check-4">
+              <span class="check four"></span>
+              <span class="hospital">Sai Sneh Hospital</span>
+            </label>
+            <label for="check-5">
+              <span class="check five"></span>
+              <span class="hospital">Prerna Hospital</span>
+            </label>
+          </div>
+          <span class="hos-info"
+            >Currently we have only these options available.Sorry For
+            Inconvinience. <br />We will add more hospitals further.</span
+          >
+        </div>
+
+        <div class="button">
+          <input type="submit" value="Register" />
+        </div>
+      </form>
+    </div>
+
+  </body>
+</html>
