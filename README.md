@@ -8,7 +8,7 @@ This website is made for Ambulance Drivers such that whenever there is emergency
 5.Alert will be send to selected hospital and traffic control units on respective route.
 
 Technology Stack:-
-FRONTEND : HTML CSS JAVASCRIPT EJS
-DATABASE : MONGODB
-BACKEND : NODE.JS
+FRONTEND : HTML CSS JAVASCRIPT EJS,
+DATABASE : MONGODB,
+BACKEND : NODE.JS,
 FRAMEWORKS AND LIBRARIES/PACKAGES : EXPRESS.JS MONGOOSE EJS
